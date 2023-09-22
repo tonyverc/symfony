@@ -1,0 +1,22 @@
+body {
+    background-color: lightgray;
+}
+
+.form_scrollable-checkboxes{
+    overflow: scroll;
+    height: 5 rem;
+    background-color:black;
+    color: white;
+}
+
+.d-none{
+    display: none;
+}
+
+form{
+    fieldset{
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+}

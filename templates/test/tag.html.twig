@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<h1>{{ title}}</h1>
+
+<h2>Tag individuels</h2>
+
+<h3>{{ tag.name }} ( id {{ tag.id }})</h3>
+<p>
+    {{tag.description}}
+</p>
+
+<h2>tags individuel</h2>
+
+<h2>{{ tag.name }} {{ tag.id }}</h2>
+<p>
+    {{tag.description}}
+</p>
+<h2>{{ cssTag.name }} ( id {{ cssTag.id }})</h2>
+
+<h2>Liste de tout les tags</h2>
+{% for tag in tags %}
+<h2>{{ tag.name }} {{ tag.id }}</h2>
+<p>
+    {{tag.description}}
+</p>
+{% endfor %}
+
+
+<h2>Liste des tags sans description</h2>
+
+{% for tag in nullDescriptionTags %}
+<h3>{{ tag.name }} {{ tag.id }}</h3>
+<p>
+    {{tag.description}}
+</p>
+
+{% endfor %}
+
+
+<h2>Liste des tags avec description</h2>
+
+{% for tag in notNullDescriptionTags %}
+<h3>{{ tag.name }} {{ tag.id }}</h3>
+<p>
+    {{tag.description}}
+</p>
+
+{% endfor %}
+
+<h2>Liste des tags avec mot-clé</h2>
+
+{% for tag in keywordTags1 %}
+<h3>{{ tag.name }} {{ tag.id }}</h3>
+<p>
+    {{tag.description}}
+</p>
+{% endfor %}  
+
+<h2>Liste des tags avec une schoolYear</h2>
+
+{% for tag in schoolYearTags %}
+<h3>{{ tag.name }} {{ tag.id }}</h3>
+<p>
+    {{tag.description}}
+</p>
+
+{% endfor %}
+
+<h2>Liste des students du tag HTML</h2>
+
+<ul>
+{% for student in htmlTag.students  %}
+<li>{{ student.firstName}} {{ student.lastName}} ( id {{ student.id}})</li>
+{% endfor %}
+</ul>
+
+
+
+{% endblock %}
